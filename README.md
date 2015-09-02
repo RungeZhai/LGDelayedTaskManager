@@ -17,6 +17,7 @@ and you are good to go.
 [NSPointerArray+AbstractionHelper](https://gist.github.com/RungeZhai/1f2607f57fbab6b5254a) is an encapsulated category making NSPointerArray NSArray/NSMutableArray-like and easier to use.
 
 ### Add/register task
+Two kinds of tasks: The one with target, selector and ID, and the one with block and ID. ID is not mandatory. The same task can be add multi times without replacing the former one. The target will not be retained and will be set to nil once dealloced. It is a good practice to remove the task if the target is dealloced or the task is no longer available, just like removing observer in `NSNotificationCenter`.
 ```objective-c
 - (void)addDelayAction:(SEL)action target:(id)target;
 
