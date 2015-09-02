@@ -80,4 +80,4 @@ Two kinds of tasks: The one with `target`, `selector` and `ID`, and the one with
 ```
 
 ### Caution
-Note that LGDelayedTaskManager is not thread-safe. It is intended to be as simple as possible.
+Note that LGDelayedTaskManager is **NOT** thread-safe. It is intended to be as simple as possible.
