@@ -1,22 +1,22 @@
 //
-//  ILSPPDelayedTaskManager.h
-//  ILSPrivatePhoto
+//  LGDelayedTaskManager.h
+//  ZiXuWuYou
 //
 //  Created by liuge on 8/19/15.
-//  Copyright (c) 2015 iLegendSoft. All rights reserved.
+//  Copyright (c) 2015 ZiXuWuYou. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 
-typedef void(^ILSPPDelayedTask)();
+typedef void(^LGDelayedTask)();
 
 typedef enum : NSUInteger {
-    ILSPPDelayedTaskTypeBlock,
-    ILSPPDelayedTaskTypeSEL,
-} ILSPPDelayedTaskType;
+    LGDelayedTaskTypeBlock,
+    LGDelayedTaskTypeSEL,
+} LGDelayedTaskType;
 
-@interface ILSPPDelayedTaskManager : NSObject
+@interface LGDelayedTaskManager : NSObject
 
 + (instancetype)defaultManager;
 
@@ -24,9 +24,9 @@ typedef enum : NSUInteger {
 
 - (void)addDelayAction:(SEL)action target:(id)target identifier:(NSString *)ID;
 
-- (void)addDelayTask:(ILSPPDelayedTask)task;
+- (void)addDelayTask:(LGDelayedTask)task;
 
-- (void)addDelayTask:(ILSPPDelayedTask)task identifier:(NSString *)ID;
+- (void)addDelayTask:(LGDelayedTask)task identifier:(NSString *)ID;
 
 - (void)removeTasksWithTarget:(id)target action:(SEL)action;
 
@@ -46,14 +46,14 @@ typedef enum : NSUInteger {
 
 /**
  Traverse every task by order
- @param target when the task type is ILSPPDelayedTaskTypeBlock, 
+ @param target when the task type is LGDelayedTaskTypeBlock, 
         or the object target points to was dealloced, target will be nil
- @param action either SEL or ILSPPDelayedTask, depends on the type parameter
+ @param action either SEL or LGDelayedTask, depends on the type parameter
  @param ID     the identifier of the task
- @param type   the type of the task, see ILSPPDelayedTaskType for details
+ @param type   the type of the task, see LGDelayedTaskType for details
  @param index  the index of the target
  */
-- (void)enumerateTasksUsingBlock:(void (^)(id target, void *action, NSString *ID, ILSPPDelayedTaskType type, NSUInteger index, BOOL *stop))block;
+- (void)enumerateTasksUsingBlock:(void (^)(id target, void *action, NSString *ID, LGDelayedTaskType type, NSUInteger index, BOOL *stop))block;
 
 /**
  *  Fire 1st task of specific identifier.

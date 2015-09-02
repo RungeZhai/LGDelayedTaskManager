@@ -14,7 +14,7 @@
 		1986FCF41B96E97C00F14181 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1986FCF31B96E97C00F14181 /* Images.xcassets */; };
 		1986FCF71B96E97C00F14181 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1986FCF51B96E97C00F14181 /* LaunchScreen.xib */; };
 		1986FD031B96E97C00F14181 /* LGDelayedTaskManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1986FD021B96E97C00F14181 /* LGDelayedTaskManagerDemoTests.m */; };
-		1986FD111B96EA6F00F14181 /* ILSPPDelayedTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1986FD0E1B96EA6F00F14181 /* ILSPPDelayedTaskManager.m */; };
+		1986FD111B96EA6F00F14181 /* LGDelayedTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1986FD0E1B96EA6F00F14181 /* LGDelayedTaskManager.m */; };
 		1986FD121B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1986FD101B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.m */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 		1986FCFC1B96E97C00F14181 /* LGDelayedTaskManagerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LGDelayedTaskManagerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1986FD011B96E97C00F14181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1986FD021B96E97C00F14181 /* LGDelayedTaskManagerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGDelayedTaskManagerDemoTests.m; sourceTree = "<group>"; };
-		1986FD0D1B96EA6F00F14181 /* ILSPPDelayedTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSPPDelayedTaskManager.h; sourceTree = "<group>"; };
-		1986FD0E1B96EA6F00F14181 /* ILSPPDelayedTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSPPDelayedTaskManager.m; sourceTree = "<group>"; };
+		1986FD0D1B96EA6F00F14181 /* LGDelayedTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDelayedTaskManager.h; sourceTree = "<group>"; };
+		1986FD0E1B96EA6F00F14181 /* LGDelayedTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDelayedTaskManager.m; sourceTree = "<group>"; };
 		1986FD0F1B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPointerArray+AbstractionHelpers.h"; sourceTree = "<group>"; };
 		1986FD101B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPointerArray+AbstractionHelpers.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,8 +129,8 @@
 		1986FD0C1B96EA6F00F14181 /* LGDelayedTaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				1986FD0D1B96EA6F00F14181 /* ILSPPDelayedTaskManager.h */,
-				1986FD0E1B96EA6F00F14181 /* ILSPPDelayedTaskManager.m */,
+				1986FD0D1B96EA6F00F14181 /* LGDelayedTaskManager.h */,
+				1986FD0E1B96EA6F00F14181 /* LGDelayedTaskManager.m */,
 				1986FD0F1B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.h */,
 				1986FD101B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.m */,
 			);
@@ -240,7 +240,7 @@
 			files = (
 				1986FCEF1B96E97C00F14181 /* ViewController.m in Sources */,
 				1986FCEC1B96E97C00F14181 /* AppDelegate.m in Sources */,
-				1986FD111B96EA6F00F14181 /* ILSPPDelayedTaskManager.m in Sources */,
+				1986FD111B96EA6F00F14181 /* LGDelayedTaskManager.m in Sources */,
 				1986FD121B96EA6F00F14181 /* NSPointerArray+AbstractionHelpers.m in Sources */,
 				1986FCE91B96E97C00F14181 /* main.m in Sources */,
 			);

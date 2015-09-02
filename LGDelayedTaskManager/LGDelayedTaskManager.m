@@ -1,15 +1,15 @@
 //
-//  ILSPPDelayedTaskManager.m
-//  ILSPrivatePhoto
+//  LGDelayedTaskManager.m
+//  ZiXuWuYou
 //
 //  Created by liuge on 8/19/15.
-//  Copyright (c) 2015 iLegendSoft. All rights reserved.
+//  Copyright (c) 2015 ZiXuWuYou. All rights reserved.
 //
 
-#import "ILSPPDelayedTaskManager.h"
+#import "LGDelayedTaskManager.h"
 #import "NSPointerArray+AbstractionHelpers.h"
 
-@interface ILSPPDelayedTaskManager ()
+@interface LGDelayedTaskManager ()
 {
     NSPointerArray *_actionStack;
     NSPointerArray *_targetStack;
@@ -17,15 +17,15 @@
 }
 @end
 
-@implementation ILSPPDelayedTaskManager
+@implementation LGDelayedTaskManager
 
 + (instancetype)defaultManager {
     
-    static ILSPPDelayedTaskManager *manager;
+    static LGDelayedTaskManager *manager;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [ILSPPDelayedTaskManager new];
+        manager = [LGDelayedTaskManager new];
     });
     
     return manager;
@@ -50,11 +50,11 @@
     [_identifierStack addObject:ID];
 }
 
-- (void)addDelayTask:(ILSPPDelayedTask)task {
+- (void)addDelayTask:(LGDelayedTask)task {
     [self addDelayTask:task identifier:nil];
 }
 
-- (void)addDelayTask:(ILSPPDelayedTask)task identifier:(NSString *)ID {
+- (void)addDelayTask:(LGDelayedTask)task identifier:(NSString *)ID {
     [_actionStack addObject:task];
     [_targetStack addObject:nil];
     [_identifierStack addObject:ID];
@@ -159,17 +159,17 @@
     return [_identifierStack containsObject:identifier];
 }
 
-- (void)enumerateTasksUsingBlock:(void (^)(id , void *, NSString *, ILSPPDelayedTaskType , NSUInteger , BOOL *))block {
+- (void)enumerateTasksUsingBlock:(void (^)(id , void *, NSString *, LGDelayedTaskType , NSUInteger , BOOL *))block {
     for (NSUInteger index = 0; index < _identifierStack.count; ++index) {
         
         NSString *ID = _identifierStack[index];
         id target = _targetStack[index];
         void *action = [_actionStack pointerAtIndex:index];
         
-        ILSPPDelayedTaskType type = ILSPPDelayedTaskTypeBlock;
+        LGDelayedTaskType type = LGDelayedTaskTypeBlock;
         
         if ([(__bridge id)action isKindOfClass:[NSString class]]) {
-            type = ILSPPDelayedTaskTypeSEL;
+            type = LGDelayedTaskTypeSEL;
             action = NSSelectorFromString((__bridge id)action);
         }
         
@@ -212,7 +212,7 @@
                 
 #pragma clang diagnostic pop
             } else {
-                ((ILSPPDelayedTask)action)();
+                ((LGDelayedTask)action)();
             }
             
             [indexSet addIndex:i];
@@ -280,7 +280,7 @@
                 
 #pragma clang diagnostic pop
             } else {
-                ((ILSPPDelayedTask)action)();
+                ((LGDelayedTask)action)();
             }
             
             [indexSet addIndex:i];
@@ -308,7 +308,7 @@
             
 #pragma clang diagnostic pop
         } else {
-            ((ILSPPDelayedTask)action)();
+            ((LGDelayedTask)action)();
         }
     }
     
