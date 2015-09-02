@@ -2,11 +2,11 @@
 A manager allows you to register a task in the form of block or selector and fire later.
 
 ##Usage
-Just include 4 files:
+Just include the following 4 files:
 
-`ILSPPDelayedTaskManager.h`
+`LGDelayedTaskManager.h`
 
-`ILSPPDelayedTaskManager.m`
+`LGDelayedTaskManager.m`
 
 `NSPointerArray+AbstractionHelpers.h`
 
@@ -23,9 +23,9 @@ Two kinds of tasks: The one with target, selector and ID, and the one with block
 
 - (void)addDelayAction:(SEL)action target:(id)target identifier:(NSString *)ID;
 
-- (void)addDelayTask:(ILSPPDelayedTask)task;
+- (void)addDelayTask:(LGDelayedTask)task;
 
-- (void)addDelayTask:(ILSPPDelayedTask)task identifier:(NSString *)ID;
+- (void)addDelayTask:(LGDelayedTask)task identifier:(NSString *)ID;
 ```
 
 ### Fire task
@@ -66,14 +66,14 @@ Two kinds of tasks: The one with target, selector and ID, and the one with block
 
 /**
  Traverse every task by order
- @param target when the task type is ILSPPDelayedTaskTypeBlock, 
+ @param target when the task type is LGDelayedTaskTypeBlock, 
         or the object target points to was dealloced, target will be nil
- @param action either SEL or ILSPPDelayedTask, depends on the type parameter
+ @param action either SEL or LGDelayedTask, depends on the type parameter
  @param ID     the identifier of the task
- @param type   the type of the task, see ILSPPDelayedTaskType for details
+ @param type   the type of the task, see LGDelayedTaskType for details
  @param index  the index of the target
  */
-- (void)enumerateTasksUsingBlock:(void (^)(id target, void *action, NSString *ID, ILSPPDelayedTaskType type, NSUInteger index, BOOL *stop))block;
+- (void)enumerateTasksUsingBlock:(void (^)(id target, void *action, NSString *ID, LGDelayedTaskType type, NSUInteger index, BOOL *stop))block;
 ```
 
 ### Caution
