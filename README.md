@@ -1,5 +1,5 @@
 # LGDelayedTaskManager
-A manager allows you to register a task in the form of block or selector and fire later.
+A manager allows you to register a task in the form of `block` or `selector` and fire later.
 
 ##Usage
 Just include the following 4 files:
