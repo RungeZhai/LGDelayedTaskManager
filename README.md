@@ -3,11 +3,17 @@ A manager allows you to register a task in the form of block or selector and fir
 
 ##Usage
 Just include 4 files:
+
 `ILSPPDelayedTaskManager.h`
+
 `ILSPPDelayedTaskManager.m`
+
 `NSPointerArray+AbstractionHelpers.h`
+
 `NSPointerArray+AbstractionHelpers.m` 
+
 and you are good to go. 
+
 [NSPointerArray+AbstractionHelper](https://gist.github.com/RungeZhai/1f2607f57fbab6b5254a) is an encapsulated category making NSPointerArray NSArray/NSMutableArray-like and easier to use.
 
 ### Add/register task
@@ -54,7 +60,7 @@ and you are good to go.
 ```
 
 ### Retrive task
-```
+```objective-c
 - (BOOL)hasTaskWithIdentifier:(NSString *)identifier;
 
 /**
